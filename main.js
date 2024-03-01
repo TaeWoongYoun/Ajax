@@ -13,7 +13,8 @@
 //     console.log(data)
 // })
 
-$.get('https://codingapple1.github.io/price.json')
-.done(function(price){
-    console.log(price.price)
-})
+// $.get('https://codingapple1.github.io/price.json')
+// .done(function(price){
+//     console.log(price.price)
+// })
+
