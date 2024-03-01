@@ -51,3 +51,10 @@ products.forEach((a, i)=>{
     </div>`;
     $('.row').append(템플릿)
 });
+
+$('#more').click(function(){
+    $.get('https://codingapple1.github.io/js/more1.json')
+    .done((data)=>{
+        console.log(data)
+    })
+})
