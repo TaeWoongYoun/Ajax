@@ -55,6 +55,18 @@ products.forEach((a, i)=>{
 $('#more').click(function(){
     $.get('https://codingapple1.github.io/js/more1.json')
     .done((data)=>{
-        console.log(data)
+        console.log(data);
+
+        data.forEach((a, i)=>{
+            var 템플릿 = 
+            `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${data[i].title}</h5>
+            <p>가격 : ${data[i].price}</p>
+            </div>`;
+        $('.row').append(템플릿)
+        })
+
+
     })
 })
