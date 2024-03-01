@@ -70,3 +70,22 @@ $('#more').click(function(){
 
     })
 })
+
+$('#more').click(function(){
+    $.get('https://codingapple1.github.io/js/more2.json')
+    .done((card)=>{
+        console.log(card);
+
+        card.forEach((a, i)=>{
+            var 템플릿 = 
+            `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${card[i].title}</h5>
+            <p>가격 : ${card[i].price}</p>
+            </div>`;
+        $('.row').append(템플릿)
+        })
+
+
+    })
+})
