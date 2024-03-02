@@ -45,10 +45,9 @@ var products =  [
 $('#price').click(function(){
     products.sort(function(a, b){
         return a.price - b.price;
-    })
+    });
 
     $('.row').html('');
-
 
     products.forEach((a, i)=>{
         var 템플릿 = 
@@ -59,7 +58,25 @@ $('#price').click(function(){
         </div>`;
         $('.row').append(템플릿)
     });
-})
+});
+
+$('#sort').click(function(){
+    var newPro = products.filter(function(product){
+        return product.price <= 60000;
+    });
+    
+    $('.row').html('');
+
+    newPro.forEach(function(product) {
+        var 템플릿 = 
+        `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${product.title}</h5>
+            <p>가격 : ${product.price}</p>
+        </div>`;
+        $('.row').append(템플릿);
+    });
+});
 
 products.forEach((a, i)=>{
     var 템플릿 = 
@@ -109,12 +126,12 @@ $('#more').click(function(){
     })
 })
 
-var 어레이 = [7,3,5,2,40];
+// var 어레이 = [7,3,5,2,40];
 
-var  새로운어레이 = 어레이.filter(function(a){
-    return a < 4;
-})
-console.log(새로운어레이);
+// var 새로운어레이 = 어레이.filter(function(a){
+//     return a < 4;
+// })
+// console.log(새로운어레이);
 
 // var 어레이 = [7,3,5,2,40];
 // 어레이.sort(function(a,b){
