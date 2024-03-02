@@ -95,3 +95,7 @@ var 어레이 = [7,3,5,2,40];
     return b - a
 });
 console.log(어레이);
+
+var 어레이2 = ['a', 'c', 'b'];
+어레이2.sort();
+console.log(어레이2);
