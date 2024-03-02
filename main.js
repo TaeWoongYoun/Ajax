@@ -46,7 +46,19 @@ $('#price').click(function(){
     products.sort(function(a, b){
         return a.price - b.price;
     })
-    console.log(products);
+
+    $('.row').html('');
+
+
+    products.forEach((a, i)=>{
+        var 템플릿 = 
+        `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${products[i].title}</h5>
+            <p>가격 : ${products[i].price}</p>
+        </div>`;
+        $('.row').append(템플릿)
+    });
 })
 
 products.forEach((a, i)=>{
