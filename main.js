@@ -92,6 +92,6 @@ $('#more').click(function(){
 
 var 어레이 = [7,3,5,2,40];
 어레이.sort(function(a,b){
-    return a - b
+    return b - a
 });
 console.log(어레이);
