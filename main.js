@@ -60,6 +60,37 @@ $('#price').click(function(){
     });
 });
 
+// var 어레이2 = ['a', 'c', 'b'];
+// 어레이2.sort(function(a,b){
+//     if(a>b) return -1;
+//     else if(b>a) return 1;
+//     else return 0;
+// });
+// console.log(어레이2);
+$('#name').click(function(){
+    products.sort(function(a, b){
+        var titleA = a.title.toUpperCase();
+        var titleB = b.title.toUpperCase();
+        
+        if (titleA > titleB) return -1;
+        else if (titleA < titleB) return 1;
+        else return 0;
+    });
+
+    $('.row').html('');
+
+    products.forEach(function(product) {
+        var 템플릿 = 
+        `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${product.title}</h5>
+            <p>가격 : ${product.price}</p>
+        </div>`;
+        $('.row').append(템플릿);
+    });
+});
+
+
 $('#sort').click(function(){
     var newPro = products.filter(function(product){
         return product.price <= 60000;
