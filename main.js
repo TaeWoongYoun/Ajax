@@ -109,7 +109,12 @@ $('#more').click(function(){
     })
 })
 
+var 어레이 = [7,3,5,2,40];
 
+var  새로운어레이 = 어레이.filter(function(a){
+    return a < 4;
+})
+console.log(새로운어레이);
 
 // var 어레이 = [7,3,5,2,40];
 // 어레이.sort(function(a,b){
