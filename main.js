@@ -97,5 +97,9 @@ var 어레이 = [7,3,5,2,40];
 console.log(어레이);
 
 var 어레이2 = ['a', 'c', 'b'];
-어레이2.sort();
+어레이2.sort(function(a,b){
+    if(a>b) return -1;
+    else if(b>a) return 1;
+    else return 0;
+});
 console.log(어레이2);
