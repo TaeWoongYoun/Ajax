@@ -42,6 +42,13 @@ var products =  [
     { id : 2, price : 60000, title : 'Black Monastery' }
 ];
 
+$('#price').click(function(){
+    products.sort(function(a, b){
+        return a.price - b.price;
+    })
+    console.log(products);
+})
+
 products.forEach((a, i)=>{
     var 템플릿 = 
     `<div class="col-sm-4">
@@ -90,16 +97,18 @@ $('#more').click(function(){
     })
 })
 
-var 어레이 = [7,3,5,2,40];
-어레이.sort(function(a,b){
-    return b - a
-});
-console.log(어레이);
 
-var 어레이2 = ['a', 'c', 'b'];
-어레이2.sort(function(a,b){
-    if(a>b) return -1;
-    else if(b>a) return 1;
-    else return 0;
-});
-console.log(어레이2);
+
+// var 어레이 = [7,3,5,2,40];
+// 어레이.sort(function(a,b){
+//     return b - a
+// });
+// console.log(어레이);
+
+// var 어레이2 = ['a', 'c', 'b'];
+// 어레이2.sort(function(a,b){
+//     if(a>b) return -1;
+//     else if(b>a) return 1;
+//     else return 0;
+// });
+// console.log(어레이2);
