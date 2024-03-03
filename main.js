@@ -109,9 +109,16 @@ $('#sort').click(function(){
     });
 });
 
-localStorage.setItem('이름', 'kim')
-localStorage.getItem('이름')
-localStorage.removeItem('이름')
+// localStorage.setItem('이름', 'kim')
+// localStorage.getItem('이름')
+// localStorage.removeItem('이름')
+
+var arr = [1,2,3];
+var arrN= JSON.stringify(arr);
+
+localStorage.setItem('num', arrN);
+var 꺼낸거 = localStorage.getItem('num');
+console.log(꺼낸거);
 
 products.forEach((a, i)=>{
     var 템플릿 = 
