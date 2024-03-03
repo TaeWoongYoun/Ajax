@@ -109,15 +109,23 @@ $('#sort').click(function(){
     });
 });
 
+localStorage.setItem('이름', 'kim')
+localStorage.getItem('이름')
+localStorage.removeItem('이름')
+
 products.forEach((a, i)=>{
     var 템플릿 = 
     `<div class="col-sm-4">
         <img src="https://via.placeholder.com/600" class="w-100">
         <h5>${products[i].title}</h5>
         <p>가격 : ${products[i].price}</p>
+        <button type="button" class="btn btn-outline-secondary buy">구매</button>
     </div>`;
     $('.row').append(템플릿)
 });
+
+
+
 
 $('#more').click(function(){
     $.get('https://codingapple1.github.io/js/more1.json')
