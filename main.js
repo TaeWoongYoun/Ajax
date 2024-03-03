@@ -113,12 +113,12 @@ $('#sort').click(function(){
 // localStorage.getItem('이름')
 // localStorage.removeItem('이름')
 
-var arr = [1,2,3];
-var arrN= JSON.stringify(arr);
+// var arr = [1,2,3];
+// var arrN= JSON.stringify(arr);
 
-localStorage.setItem('num', arrN);
-var 꺼낸거 = localStorage.getItem('num');
-console.log(꺼낸거);
+// localStorage.setItem('num', arrN);
+// var 꺼낸거 = localStorage.getItem('num');
+// console.log(꺼낸거);
 
 products.forEach((a, i)=>{
     var 템플릿 = 
@@ -130,6 +130,18 @@ products.forEach((a, i)=>{
     </div>`;
     $('.row').append(템플릿)
 });
+
+$('.row').on('click', '.buy', function(e) {
+    var title = $(e.target).siblings('h5').text();
+    if (localStorage.getItem('cart') != null) {
+        var 꺼낸거 = JSON.parse(localStorage.getItem('cart'));
+        꺼낸거.push(title);
+        localStorage.setItem('cart', JSON.stringify(꺼낸거));
+    } else {
+        localStorage.setItem('cart', JSON.stringify([title]));
+    }
+});
+
 
 
 
